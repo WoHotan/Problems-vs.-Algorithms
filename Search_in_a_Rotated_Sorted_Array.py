@@ -7,6 +7,9 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
+    if len(input_list) == 0:
+        print("Please input a valid array.")
+        return -1
     min_number_index = find_min_number_index(input_list)
     if number > input_list[0]:
         return binary_search(input_list, number, 0, min_number_index - 1)
@@ -43,6 +46,8 @@ def find_min_number_index(input_list):
             if input_list[mid - 1] > input_list[mid]:
                 return mid
             hight = mid - 1
+        else:
+            return mid
 
 def linear_search(input_list, number):
     for index, element in enumerate(input_list):
@@ -64,3 +69,5 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 test_function([[1, 2, 3, 4, 6, 7, 8], 1])
+test_function([[1], 0])
+test_function([[], 1])
