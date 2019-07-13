@@ -7,6 +7,9 @@ def sqrt(number):
     Returns:
        int: Floored Square Root
     """
+    if type(number) != int:
+        print("Please input an integer")
+        return -1
     if number < 0 :
         return None
     mid_number = number // 2
@@ -28,7 +31,7 @@ def sqrt(number):
         else:
             return mid_number
 
-print ("Pass" if  (3 == sqrt(9)) else "Fail")
+print ("Pass" if  (-1 == sqrt(9.0)) else "Fail")
 print ("Pass" if  (0 == sqrt(0)) else "Fail")
 print ("Pass" if  (4 == sqrt(16)) else "Fail")
 print ("Pass" if  (1 == sqrt(1)) else "Fail")
